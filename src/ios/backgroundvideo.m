@@ -43,14 +43,14 @@
     self.parentView.backgroundColor = [UIColor clearColor];
     self.view = [[UIView alloc] initWithFrame: self.parentView.bounds];
     [self.parentView addSubview: view];
-    view.alpha = 0.2f;
+    view.alpha = 0;
     self.parentView.userInteractionEnabled = NO;
     
     //camera stuff
     
     //Capture session
     session = [[AVCaptureSession alloc] init];
-    [session setSessionPreset:AVCaptureSessionPresetLow];
+    [session setSessionPreset:AVCaptureSessionPresetHigh];
     
     //Get the front camera and set the capture device
     AVCaptureDevice *inputDevice = [self getCamera: self.camera];
