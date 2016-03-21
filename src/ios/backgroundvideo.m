@@ -104,7 +104,7 @@
 - (void)stop:(CDVInvokedUrlCommand *)command
 {
     [output stopRecording];
-    self.view.alpha = 0;
+    self.view.alpha = 0.5f;
     
     CDVPluginResult *pluginResult = [CDVPluginResult resultWithStatus:CDVCommandStatus_OK messageAsString:outputPath];
     [self.commandDelegate sendPluginResult:pluginResult callbackId:command.callbackId];
