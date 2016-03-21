@@ -43,7 +43,7 @@
     self.parentView.backgroundColor = [UIColor clearColor];
     self.view = [[UIView alloc] initWithFrame: self.parentView.bounds];
     [self.parentView addSubview: view];
-    view.alpha = 0;
+    view.alpha = 0.5f;
     self.parentView.userInteractionEnabled = NO;
     
     //camera stuff
@@ -104,7 +104,7 @@
 - (void)stop:(CDVInvokedUrlCommand *)command
 {
     [output stopRecording];
-    self.view.alpha = 0.5f;
+    self.view.alpha = 0;
     
     CDVPluginResult *pluginResult = [CDVPluginResult resultWithStatus:CDVCommandStatus_OK messageAsString:outputPath];
     [self.commandDelegate sendPluginResult:pluginResult callbackId:command.callbackId];
