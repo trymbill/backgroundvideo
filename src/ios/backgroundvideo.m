@@ -50,7 +50,7 @@
     
     //Capture session
     session = [[AVCaptureSession alloc] init];
-    [session setSessionPreset:AVCaptureSessionPresetHigh];
+    [session setSessionPreset:AVCaptureSessionPreset640x480];
     
     //Get the front camera and set the capture device
     AVCaptureDevice *inputDevice = [self getCamera: self.camera];
