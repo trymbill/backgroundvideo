@@ -43,14 +43,14 @@
     self.parentView.backgroundColor = [UIColor clearColor];
     self.view = [[UIView alloc] initWithFrame: self.parentView.bounds];
     [self.parentView addSubview: view];
-    view.alpha = 0.5f;
+    view.alpha = 0;
     self.parentView.userInteractionEnabled = NO;
     
     //camera stuff
     
     //Capture session
     session = [[AVCaptureSession alloc] init];
-    [session setSessionPreset:AVCaptureSessionPresetHigh];
+    [session setSessionPreset:AVCaptureSessionPreset640x480];
     
     //Get the front camera and set the capture device
     AVCaptureDevice *inputDevice = [self getCamera: self.camera];
@@ -64,8 +64,6 @@
     CMTime maxDuration = CMTimeMakeWithSeconds(1800, 1);
     
     output = [[AVCaptureMovieFileOutput alloc]init];
-    CMTime fragmentInterval = CMTimeMake(300,1);
-    [output setMovieFragmentInterval:fragmentInterval];
     output.maxRecordedDuration = maxDuration;
     
     
