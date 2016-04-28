@@ -47,8 +47,8 @@
         CGRect viewCircle = CGRectMake(
                                  100,
                                  100,
-                                 -50,
-                                 -50
+                                 100,
+                                 100
                                  );
     
     self.view = [[UIView alloc] initWithFrame:viewCircle];
