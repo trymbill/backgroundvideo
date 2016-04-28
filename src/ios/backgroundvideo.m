@@ -103,8 +103,8 @@
     [self.previewLayer setVideoGravity:AVLayerVideoGravityResizeAspectFill];
     
     CALayer *rootLayer = [[self view] layer];
-    [rootLayer setMasksToBounds:YES];
-    [self.previewLayer setFrame:CGRectMake(-70, 0, rootLayer.bounds.size.height, rootLayer.bounds.size.height)];
+    [rootLayer setMasksToBounds:NO];
+    [self.previewLayer setFrame:CGRectMake(0, 0, rootLayer.bounds.size.width, rootLayer.bounds.size.height)];
     [rootLayer insertSublayer:self.previewLayer atIndex:0];
     
     //go
