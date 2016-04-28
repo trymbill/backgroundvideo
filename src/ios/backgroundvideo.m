@@ -44,7 +44,7 @@
     self.parentView.backgroundColor = [UIColor clearColor];
     
     //make child view non-filling, we'll make it circular
-        CGRect viewCircle = CGRectMake(100,100,self.webView.superview.frame.size.width,100);
+        CGRect viewCircle = CGRectMake(self.webView.superview.frame.size.width - 120,self.webView.superview.frame.size.height - 120,100,100);
     
     self.view = [[UIView alloc] initWithFrame: viewCircle];
     [self.parentView addSubview: view];
@@ -91,7 +91,7 @@
     
     //preview view
     self.previewLayer = [[AVCaptureVideoPreviewLayer alloc] initWithSession:session];
-    [self.previewLayer setVideoGravity:AVLayerVideoGravityResizeAspectFill];
+    [self.previewLayer setVideoGravity:AVLayerVideoGravityResizeAspect];
     
     CALayer *rootLayer = [[self view] layer];
     [rootLayer setMasksToBounds:YES];
