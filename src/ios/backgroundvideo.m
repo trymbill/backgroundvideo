@@ -49,7 +49,7 @@
     CGFloat viewX = self.webView.superview.frame.size.width - viewWidth - 20;
     CGFloat viewY = self.webView.superview.frame.size.height - viewHeight - 20;
     
-    CGRect viewCircle = CGRectMake(viewX,viewY,viewWidth,viewHeight);
+    CGRect viewCircle = CGRectMake(viewX,viewY,100,100);
     
     self.view = [[UIView alloc] initWithFrame: viewCircle];
     [self.parentView addSubview: view];
@@ -100,7 +100,7 @@
     
     //preview view
     self.previewLayer = [[AVCaptureVideoPreviewLayer alloc] initWithSession:session];
-    [self.previewLayer setVideoGravity:AVLayerVideoGravityResizeAspect];
+    [self.previewLayer setVideoGravity:AVLayerVideoGravityResizeAspectFill];
     
     CALayer *rootLayer = [[self view] layer];
     [rootLayer setMasksToBounds:YES];
