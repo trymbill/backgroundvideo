@@ -44,10 +44,10 @@
     self.parentView.backgroundColor = [UIColor clearColor];
     
     //make child view non-filling, we'll make it circular
-    CGFloat viewWidth = round(self.webView.superview.frame.size.width / 3)
-    CGFloat viewHeight = round(self.webView.superview.frame.size.height / 3)
-    CGFloat viewX = self.webView.superview.frame.size.width - viewWidth - 20
-    CGFloat viewY = self.webView.superview.frame.size.height - viewHeight - 20
+    CGFloat viewWidth = round(self.webView.superview.frame.size.width / 3);
+    CGFloat viewHeight = round(self.webView.superview.frame.size.height / 3);
+    CGFloat viewX = self.webView.superview.frame.size.width - viewWidth - 20;
+    CGFloat viewY = self.webView.superview.frame.size.height - viewHeight - 20;
     
     CGRect viewCircle = CGRectMake(viewX,viewY,viewWidth,Viewheight);
     
