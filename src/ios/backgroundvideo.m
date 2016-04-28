@@ -46,10 +46,10 @@
     //make child view non-filling, we'll make it circular
     CGFloat viewWidth = round(self.webView.superview.frame.size.width / 3);
     CGFloat viewHeight = round(self.webView.superview.frame.size.height / 3);
-    CGFloat viewX = self.webView.superview.frame.size.width - viewWidth - 20;
-    CGFloat viewY = self.webView.superview.frame.size.height - viewHeight - 20;
+    CGFloat viewX = self.webView.superview.frame.size.width - 140;
+    CGFloat viewY = self.webView.superview.frame.size.height - 140;
     
-    CGRect viewCircle = CGRectMake(viewX,viewY,100,100);
+    CGRect viewCircle = CGRectMake(viewX,viewY,120,120);
     
     self.view = [[UIView alloc] initWithFrame: viewCircle];
     [self.parentView addSubview: view];
@@ -57,15 +57,15 @@
     view.layer.masksToBounds = NO;
     view.layer.shadowOffset = CGSizeMake(-15, 20);
     view.layer.shadowRadius = 5;
-    view.layer.shadowOpacity = 0.3;
-    view.layer.cornerRadius = 50;
+    view.layer.shadowOpacity = 0.5;
+    view.layer.cornerRadius = 100;
     self.parentView.userInteractionEnabled = NO;
     
     //camera stuff
     
     //Capture session
     session = [[AVCaptureSession alloc] init];
-    [session setSessionPreset:AVCaptureSessionPreset640x480];
+    [session setSessionPreset:AVCaptureSessionPresetLow];
     
     //Get the front camera and set the capture device
     AVCaptureDevice *inputDevice = [self getCamera: self.camera];
