@@ -54,7 +54,7 @@
     self.view = [[UIView alloc] initWithFrame:viewCircle];
     [self.parentView addSubview: view];
     view.alpha = 1;
-    view.layer.cornerRadius = 50;
+    //view.layer.cornerRadius = 50;
     self.parentView.userInteractionEnabled = NO;
     
     //camera stuff
