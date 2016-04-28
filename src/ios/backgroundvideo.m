@@ -41,9 +41,19 @@
     [self.webView.superview addSubview:self.parentView];
     
     self.parentView.backgroundColor = [UIColor clearColor];
-    self.view = [[UIView alloc] initWithFrame: self.parentView.bounds];
+    
+    //make child view non-filling, we'll make it circular
+        CGRect viewCircle = CGRectMake(
+                                 10,
+                                 10,
+                                 100,
+                                 100
+                                 );
+    
+    self.view = [[UIView alloc] initWithFrame:viewCircle];
     [self.parentView addSubview: view];
-    view.alpha = 0;
+    view.alpha = 1;
+    view.layer.cornerRadius = 50;
     self.parentView.userInteractionEnabled = NO;
     
     //camera stuff
