@@ -45,10 +45,10 @@
     
     //make child view non-filling, we'll make it circular
         CGRect viewCircle = CGRectMake(
-                                 10,
-                                 10,
-                                 200,
-                                 100
+                                 100,
+                                 100,
+                                 -50,
+                                 -50
                                  );
     
     self.view = [[UIView alloc] initWithFrame:viewCircle];
