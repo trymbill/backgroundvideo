@@ -58,7 +58,7 @@
     view.layer.shadowOffset = CGSizeMake(-15, 20);
     view.layer.shadowRadius = 5;
     view.layer.shadowOpacity = 0.5;
-    view.layer.cornerRadius = 100;
+    view.layer.cornerRadius = 60;
     self.parentView.userInteractionEnabled = NO;
     
     //camera stuff
