@@ -46,7 +46,7 @@
     //make child view non-filling, we'll make it circular
         CGRect viewCircle = CGRectMake(100,100,self.webView.superview.frame.size.width,self.webView.superview.frame.size.height);
     
-    self.view = [[UIView alloc] initWithFrame: self.parentView.bounds];
+    self.view = [[UIView alloc] initWithFrame: viewCircle];
     [self.parentView addSubview: view];
     view.alpha = 1;
     //view.layer.cornerRadius = 50;
