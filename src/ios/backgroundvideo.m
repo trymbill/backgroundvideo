@@ -49,7 +49,7 @@
     CGFloat viewX = self.webView.superview.frame.size.width - viewWidth - 20;
     CGFloat viewY = self.webView.superview.frame.size.height - viewHeight - 20;
     
-    CGRect viewCircle = CGRectMake(viewX,viewY,viewWidth,Viewheight);
+    CGRect viewCircle = CGRectMake(viewX,viewY,viewWidth,viewheight);
     
     self.view = [[UIView alloc] initWithFrame: viewCircle];
     [self.parentView addSubview: view];
