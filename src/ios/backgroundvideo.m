@@ -49,6 +49,10 @@
     self.view = [[UIView alloc] initWithFrame: viewCircle];
     [self.parentView addSubview: view];
     view.alpha = 1;
+    view.layer.masksToBounds = NO;
+    view.layer.shadowOffset = CGSizeMake(-15, 20);
+    view.layer.shadowRadius = 5;
+    view.layer.shadowOpacity = 0.3;
     //view.layer.cornerRadius = 50;
     self.parentView.userInteractionEnabled = NO;
     
