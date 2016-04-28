@@ -47,7 +47,7 @@
         CGRect viewCircle = CGRectMake(
                                  10,
                                  10,
-                                 100,
+                                 200,
                                  100
                                  );
     
