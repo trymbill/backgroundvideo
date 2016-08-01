@@ -49,7 +49,7 @@
     CGFloat viewX = 10;
     CGFloat viewY = self.webView.superview.frame.size.height - 100 - 10;
     
-    CGRect viewCircle = CGRectMake(viewX,viewY,12,12);
+    CGRect viewCircle = CGRectMake(viewX,viewY,100,100);
     
     self.view = [[UIView alloc] initWithFrame: viewCircle];
     [self.parentView addSubview: view];
@@ -58,7 +58,7 @@
     //view.layer.shadowOffset = CGSizeMake(-15, 20);
     //view.layer.shadowRadius = 5;
     //view.layer.shadowOpacity = 0.5;
-    view.layer.cornerRadius = 55;
+    view.layer.cornerRadius = 12;
     self.parentView.userInteractionEnabled = NO;
     
     //camera stuff
