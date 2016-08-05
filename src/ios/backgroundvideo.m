@@ -73,7 +73,6 @@
     
     //write the file
     outputPath = [self getFileName];
-    NSURL *fileURI = [[NSURL alloc] initFileURLWithPath:outputPath];
     
     //capture device output
     CMTime maxDuration = CMTimeMakeWithSeconds(1800, 1);
@@ -122,6 +121,8 @@
 
 - (void) start:(CDVInvokedUrlCommand *)command
 {
+
+    NSURL *fileURI = [[NSURL alloc] initFileURLWithPath:outputPath];
     //go
     [session startRunning];
     [output startRecordingToOutputFileURL:fileURI recordingDelegate:self ];
