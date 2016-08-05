@@ -20,7 +20,7 @@
 #pragma mark -
 #pragma mark backgroundvideo
 
-- (void) start:(CDVInvokedUrlCommand *)command
+- (void) show:(CDVInvokedUrlCommand *)command
 {
     //stop the device from being able to sleep
     [UIApplication sharedApplication].idleTimerDisabled = YES;
@@ -107,6 +107,21 @@
     [self.previewLayer setFrame:CGRectMake(0, 0, rootLayer.bounds.size.width, rootLayer.bounds.size.height)];
     [rootLayer insertSublayer:self.previewLayer atIndex:0];
     
+    CDVPluginResult *pluginResult = [CDVPluginResult resultWithStatus:CDVCommandStatus_OK messageAsString:outputPath];
+    [self.commandDelegate sendPluginResult:pluginResult callbackId:command.callbackId];
+}
+
+- (void) hide:(CDVInvokedUrlCommand *)command
+{
+    //hide
+    self.view.alpha = 0;
+    
+    CDVPluginResult *pluginResult = [CDVPluginResult resultWithStatus:CDVCommandStatus_OK messageAsString:outputPath];
+    [self.commandDelegate sendPluginResult:pluginResult callbackId:command.callbackId];
+}
+
+- (void) start:(CDVInvokedUrlCommand *)command
+{
     //go
     [session startRunning];
     [output startRecordingToOutputFileURL:fileURI recordingDelegate:self ];
