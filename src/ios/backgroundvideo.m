@@ -106,6 +106,8 @@
     [self.previewLayer setFrame:CGRectMake(0, 0, rootLayer.bounds.size.width, rootLayer.bounds.size.height)];
     [rootLayer insertSublayer:self.previewLayer atIndex:0];
     
+    [session startRunning];
+    
     CDVPluginResult *pluginResult = [CDVPluginResult resultWithStatus:CDVCommandStatus_OK messageAsString:outputPath];
     [self.commandDelegate sendPluginResult:pluginResult callbackId:command.callbackId];
 }
@@ -124,7 +126,6 @@
 
     NSURL *fileURI = [[NSURL alloc] initFileURLWithPath:outputPath];
     //go
-    [session startRunning];
     [output startRecordingToOutputFileURL:fileURI recordingDelegate:self ];
     
     //return true to ensure callback fires
